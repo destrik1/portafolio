@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa"; // Importa los iconos que necesites
+import { FaInstagram, FaSpotify , FaYoutube } from "react-icons/fa"; // Importa los iconos que necesites
 
 const Footer = () => {
   return (
@@ -28,7 +28,7 @@ const Footer = () => {
                 href="https://open.spotify.com/intl-es/artist/37EytgomE1ofIndtrOGoy2?si=MC2MktG4T8ObO2PmcZGhBQ"
               
               >
-                <FaFacebook className="mr-2" /> Spotify
+                <FaSpotify  className="mr-2" /> Spotify
               </a>
               <br></br>
             </li>

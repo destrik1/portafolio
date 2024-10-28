@@ -14,7 +14,7 @@ function Home({}: Props) {
       <HeroImage />
       <Title
         titulo={"Haz click aqui"}/>
-      <CardSection />
+      <CardSection/>
       <Footer />
     </>
   );

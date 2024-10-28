@@ -5,29 +5,64 @@ import songFile2 from "../assets/Song/ElMomento.mp3";
 import songFile3 from "../assets/Song/EsaDroga.mp3";
 import songFile4 from "../assets/Song/PegaoPegao.mp3";
 
-// Definición del tipo Song
+// Define Song type
 interface Song {
   id: number;
   title: string;
-  artist: string; // Agregamos el campo artista
+  artist: string;
   audioSrc: string;
+  spotifyUrl: string;
+  youtubeUrl: string;
 }
 
-// Lista de canciones con IDs únicos y artistas
+// List of songs with unique IDs, artists, and URLs
 const songs: Song[] = [
-  { id: 1, title: "y si no fuera", artist: "Artista 1", audioSrc: songFile },
-  { id: 2, title: "Amarella", artist: "Artista 2", audioSrc: songFile1 },
-  { id: 3, title: "El Momento", artist: "Artista 3", audioSrc: songFile2 },
-  { id: 4, title: "Esa Droga", artist: "Artista 4", audioSrc: songFile3 },
-  { id: 5, title: "Pegao Pegao", artist: "Artista 5", audioSrc: songFile4 },
+  { 
+    id: 1, 
+    title: "y si no fuera", 
+    artist: "Artista 1", 
+    audioSrc: songFile, 
+    spotifyUrl: "https://open.spotify.com/track/spotify-id-1", 
+    youtubeUrl: "https://www.youtube.com/watch?v=youtube-id-1" 
+  },
+  { 
+    id: 2, 
+    title: "Amarella", 
+    artist: "Artista 2", 
+    audioSrc: songFile1, 
+    spotifyUrl: "https://open.spotify.com/track/spotify-id-2", 
+    youtubeUrl: "https://www.youtube.com/watch?v=youtube-id-2" 
+  },
+  { 
+    id: 3, 
+    title: "El Momento", 
+    artist: "Artista 3", 
+    audioSrc: songFile2, 
+    spotifyUrl: "https://open.spotify.com/track/spotify-id-3", 
+    youtubeUrl: "https://www.youtube.com/watch?v=youtube-id-3" 
+  },
+  { 
+    id: 4, 
+    title: "Esa Droga", 
+    artist: "Artista 4", 
+    audioSrc: songFile3, 
+    spotifyUrl: "https://open.spotify.com/track/spotify-id-4", 
+    youtubeUrl: "https://www.youtube.com/watch?v=youtube-id-4" 
+  },
+  { 
+    id: 5, 
+    title: "Pegao Pegao", 
+    artist: "Artista 5", 
+    audioSrc: songFile4, 
+    spotifyUrl: "https://open.spotify.com/track/spotify-id-5", 
+    youtubeUrl: "https://www.youtube.com/watch?v=youtube-id-5" 
+  },
 ];
 
-// Componente del reproductor de audio
+// Audio player component
 const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
-  console.log("Reproduciendo:", currentSong);
-
   return (
-    <div className="text-center m-20">
+    <div className="text-center m-10 h-10">
       {currentSong && (
         <audio key={currentSong.id} controls>
           <source src={currentSong.audioSrc} type="audio/mpeg" />
@@ -43,7 +78,7 @@ const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
   );
 };
 
-// Componente de la lista de canciones con tabla
+// Playlist component with song table
 const Playlist = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState<number | null>(0);
 
@@ -55,13 +90,10 @@ const Playlist = () => {
     }
   };
 
-  const currentSong =
-    currentSongIndex !== null ? songs[currentSongIndex] : null;
+  const currentSong = currentSongIndex !== null ? songs[currentSongIndex] : null;
 
   return (
-    <div
-      className="flex justify-center items-center h-[70vh]"
-    >
+    <div className="justify-items-center p-7">
       <div className="w-96 border shadow-xl items-center mt-7 rounded-lg bg-white p-8">
         <h2 className="text-center mb-4">Playlist</h2>
         <AudioPlayer currentSong={currentSong} />
@@ -78,17 +110,27 @@ const Playlist = () => {
             {songs.map((song, index) => (
               <tr
                 key={song.id}
-                onClick={() => {
-                  console.log("Cambiando canción a:", song.title);
-                  setCurrentSongIndex(index);
-                }}
                 className="cursor-pointer text-center"
               >
                 <td className="border p-2">{song.title}</td>
                 <td className="border p-2">{song.artist}</td>
-                <td className="border p-2">
-                  <button onClick={() => console.log(`Reproduciendo: ${song.title}`)}>Reproducir</button>
-                  <button onClick={() => console.log(`Favorito: ${song.title}`)}>Favorito</button>
+                <td className="border p-2 flex justify-center gap-2">
+                  <a
+                    href={song.spotifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600"
+                  >
+                    Spotify
+                  </a>
+                  <a
+                    href={song.youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+                  >
+                    YouTube
+                  </a>
                 </td>
               </tr>
             ))}

@@ -10,9 +10,9 @@ type Props = {
 function Card({ icon,  colorCard, texto1, texto2 }: Props) {
   return (
     <>
-      <div className={`hover:cursor-pointer hover:scale-[1.1]  transition-transform duration-300 mb-6 px-6  w-[400px] max-h-[360px] h-[360px] max-md:mx-2  shadow-lg rounded-xl border ${colorCard}`}>
+      <div className={`hover:cursor-pointer hover:scale-[1.1]  transition-transform duration-300  ${colorCard}`}>
         <div className="flex justify-center">
-          <div className="w-36 border shadow-xl items-center mt-7 rounded-full bg-white p-8">
+        <div className="w-36 h-36 flex items-center justify-center border shadow-xl mt-4 rounded-full bg-white">
             {icon}
           </div>
         </div>
