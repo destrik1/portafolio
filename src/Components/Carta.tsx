@@ -3,7 +3,6 @@ import { FaYoutube } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 
 import Card from "../Components/Card";
-import { Link } from "react-router-dom";
 type Props = {};
 function carta({}: Props) {
   return (
@@ -16,7 +15,7 @@ function carta({}: Props) {
         >
           <Card
             colorCard={
-              "bg-gradient-to-b from-emerald-700 to-emerald-500 shadow-lg rounded-full border border-emerald-500 w-60 h-60 flex items-center justify-center"
+              "bg-gradient-to-b from-emerald-700 to-emerald-500 shadow-lg rounded-full border border-emerald-500 w-60 h-60 flex items-center justify-center mb-"
             }
             icon={<FaSpotify className="h-20 w-20 text-emerald-500" />}
             texto2={""}

@@ -30,18 +30,20 @@ function CardSection({}: Props) {
             icon={<FaYoutube className="h-20 w-20 text-red-700" />}
           />
         </Link>
-        <Link to={"/Youtube"}>
+        <a
+          href="https://www.instagram.com/paya.cl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw== "
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Card
             colorCard={
               "bg-gradient-to-b bg-amber-400 from-purple-600 mb-6 px-6  w-[400px] max-h-[360px] h-[360px] max-md:mx-2  shadow-lg rounded-xl border "
             }
-            icon={
-              <FiInstagram className="h-20 w-20 text-purple-800"/>
-            }
+            icon={<FiInstagram className="h-20 w-20 text-purple-800" />}
             texto2={"Revisa aquí"}
             texto1={"Explora las opciones alimenticias para una vida saludable"}
           />
-        </Link>
+        </a>
       </section>
     </>
   );
