@@ -7,7 +7,6 @@ type Props = {
   img3: string;
 };
 
-
 function CarouselComponent({ img1, img2, img3 }: Props) {
   return (
     <div style={styles.carouselContainer}>
@@ -22,20 +21,17 @@ function CarouselComponent({ img1, img2, img3 }: Props) {
       >
         <div>
           <img src={img1} alt="Imagen 1" style={styles.image} />
-          <p className="legend">Descripción de la imagen 1</p>
         </div>
         <div>
           <img src={img2} alt="Imagen 2" style={styles.image} />
-          <p className="legend">Descripción de la imagen 2</p>
         </div>
         <div>
           <img src={img3} alt="Imagen 3" style={styles.image} />
-          <p className="legend">Descripción de la imagen 3</p>
         </div>
       </Carousel>
     </div>
   );
-};
+}
 
 const styles = {
   carouselContainer: {

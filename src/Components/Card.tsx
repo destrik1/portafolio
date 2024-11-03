@@ -3,8 +3,8 @@ import { ReactNode } from "react";
 type Props = {
   icon: ReactNode;
   colorCard: String;
-  texto1: String;
-  texto2: String;
+  texto1?: String;
+  texto2?: String;
 };
 
 function Card({ icon,  colorCard, texto1, texto2 }: Props) {
