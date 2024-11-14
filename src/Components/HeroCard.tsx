@@ -7,11 +7,12 @@ function HeroImage({}: Props) {
     <>
       <section className="md:h-[600px]  md:flex md:justify-center">
         <div className="md:text-left text-center  md:text-4xl text-2xl  md:w-5/12 content-center">
-          <p className="text-black-700 font-bold text-justify">
+          <p className="text-black-700 font-bold text-justify text-white">
             Hola a todos, soy PAYA, y estoy aquí para compartir mi música y mi
             historia con ustedes.
           </p>
-          <p className="text-base te md:w-10/12 italic text-justify">
+          <br></br>
+          <p className="text-base te md:w-10/12 italic text-justify text-white">
             Mi música nace de experiencias, emociones y la vida misma. Creo en
             el poder de la música para unir a las personas, para curar y para
             inspirar. Cada canción es un capítulo de mi viaje, donde exploro el

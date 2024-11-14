@@ -1,11 +1,11 @@
-import { FaInstagram, FaSpotify , FaYoutube } from "react-icons/fa"; // Importa los iconos que necesites
+import { FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa"; // Importa los iconos que necesites
 
 const Footer = () => {
   return (
-    <footer className="bg-black px-10 py-3 text-center text-white">
+    <footer className=" px-10 py-3 text-center text-white">
       <div className="inline-flex justify-between max-w-[1000px] m-0 flex-wrap">
         <div className="flex-1 p-1 min-w-[200px] ">
-          <h4 className="bg-black px-5 py-1 text-center my-4 text-white text-2xl">
+          <h4 className=" px-5 py-1 text-center my-4 text-white text-2xl">
             Sobre Nosotros
           </h4>
           <p className="text-justify">
@@ -24,11 +24,11 @@ const Footer = () => {
           <h4 className="flex text-center mb-[20px] ">Síguenos</h4>
           <ul className="">
             <li className="theme.listStyleType :">
-              <a className="flex  mb-[1px]"
+              <a
+                className="flex  mb-[1px]"
                 href="https://open.spotify.com/intl-es/artist/37EytgomE1ofIndtrOGoy2?si=MC2MktG4T8ObO2PmcZGhBQ"
-              
               >
-                <FaSpotify  className="mr-2" /> Spotify
+                <FaSpotify className="mr-2" /> Spotify
               </a>
               <br></br>
             </li>
@@ -36,14 +36,17 @@ const Footer = () => {
               <a
                 href="https://www.instagram.com/paya.cl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 className="flex  mb-[1px]"
-              > 
+              >
                 <FaInstagram className="mr-2" /> Instagram
               </a>
-              <br/>
+              <br />
             </li>
-            <br/>
+            <br />
             <li className="flex items-center bottom-[1px]">
-              <a href="https://twitter.com" className="flex text-center mb-[1px]">
+              <a
+                href="https://twitter.com"
+                className="flex text-center mb-[1px]"
+              >
                 <FaYoutube className="mr-2" /> Youtube
               </a>
             </li>
@@ -60,6 +63,5 @@ const Footer = () => {
     </footer>
   );
 };
-
 
 export default Footer;

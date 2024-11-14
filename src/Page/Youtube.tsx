@@ -11,14 +11,14 @@ type Props = {};
 
 function Youtube({}: Props) {
   return (
-    <>
+    <div className="bg-gradient-to-b bg-teal-500 from-red-600" >
       <NavBar />
       <CarouselComponent img1={img1} img2={img2} img3={img3} />
       <br/>
       <Carta/>
       <br />
       <Footer />
-    </>
+    </div>
   );
 }
 

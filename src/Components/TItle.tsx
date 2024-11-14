@@ -4,7 +4,7 @@ type Props = {
   
   function Title({ titulo }: Props) {
     return (
-      <section className="grid justify-center text-center my-10">
+      <section className="grid justify-center text-center my-10 text-white">
         <p className="lg:text-5xl text-black-700  italic">{titulo}</p>
       </section>
     );

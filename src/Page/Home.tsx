@@ -8,15 +8,14 @@ type Props = {};
 
 function Home({}: Props) {
   return (
-    <>
+    <div className="bg-gradient-to-b bg-purple-700 from-orange-500">
       <NavBar />
-      <br/>
+      <br />
       <HeroImage />
-      <Title
-        titulo={"Haz click aqui"}/>
-      <CardSection/>
+      <Title titulo={"Haz click aqui"} />
+      <CardSection />
       <Footer />
-    </>
+    </div>
   );
 }
 
