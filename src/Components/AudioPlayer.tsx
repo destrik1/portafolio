@@ -16,7 +16,6 @@ interface Song {
 
 // List of songs with unique IDs, artists, and URLs
 const songs: Song[] = [
-
   {
     id: 2,
     title: "Amarella",
@@ -53,11 +52,10 @@ const songs: Song[] = [
     youtubeUrl: "https://youtu.be/sHl_OUSFI9I?si=GqzOBmJDLhGcMHhT",
   },
 ];
-
 // Audio player component
 const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
   return (
-    <div className="text-center m-10 h-10 bg">
+    <div className="text-center m-10 h-10">
       {currentSong ? (
         <div className="flex justify-center">
           <audio
@@ -65,9 +63,10 @@ const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
             controls
             className="w-3/4" // Hacer la barra más larga (75% del contenedor)
             style={{
-              backgroundColor: "#4CAF50", // Cambiar el color de la barra de reproducción (puedes ajustarlo a tu color)
+              backgroundColor: "#4CAF50", // Cambiar el color de la barra de reproducción (ajústalo como prefieras)
               borderRadius: "10px",
             }}
+            controlsList="nodownload" // Desactiva la opción de descarga en los controles
           >
             <source src={currentSong.audioSrc} type="audio/mpeg" />
             Tu navegador no soporta el elemento de audio.
@@ -77,7 +76,7 @@ const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
         <p>Selecciona una canción para reproducir</p>
       )}
       {currentSong && (
-        <p className="text-white mt-2">
+        <p className="text-white mt-2 text-2xl">
           {currentSong.title} - {currentSong.artist}
         </p>
       )}
@@ -89,14 +88,7 @@ const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
 const Playlist = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState<number | null>(0);
 
-  const playNextSong = () => {
-    if (currentSongIndex !== null) {
-      const nextIndex = (currentSongIndex + 1) % songs.length;
-      setCurrentSongIndex(nextIndex);
-      console.log("Cambiando a la siguiente canción:", songs[nextIndex].title);
-    }
-  };
-
+  // Cambiar a la canción seleccionada al hacer clic en cualquier fila
   const setSong = (index: number) => {
     setCurrentSongIndex(index);
     console.log("Canción seleccionada:", songs[index].title);
@@ -112,24 +104,22 @@ const Playlist = () => {
           Playlist
         </h2>
         <AudioPlayer currentSong={currentSong} />
-        <button
-          onClick={playNextSong}
-          className="mb-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-        >
-          Cambiar canción
-        </button>
+        <br />
         <table className="w-full table-auto text-white">
           <thead>
             <tr className="bg-gray-700 text-xl">
               <th className="p-3 text-center font-medium">Canción</th>
               <th className="p-3 text-center font-medium">Artista</th>
               <th className="p-3 text-center font-medium">Acciones</th>
-              <th className="p-3 text-center font-medium">Seleccionar</th>
             </tr>
           </thead>
           <tbody>
             {songs.map((song, index) => (
-              <tr key={song.id} className="hover:bg-gray-600 cursor-pointer">
+              <tr
+                key={song.id}
+                className="hover:bg-gray-600 cursor-pointer"
+                onClick={() => setSong(index)} // Cambiar la canción al hacer clic en la fila
+              >
                 <td className="border p-3 text-center">{song.title}</td>
                 <td className="border p-3 text-center">{song.artist}</td>
                 <td className="border p-3 text-center flex justify-center gap-2">
@@ -149,14 +139,6 @@ const Playlist = () => {
                   >
                     YouTube
                   </a>
-                </td>
-                <td className="border p-3 text-center">
-                  <button
-                    onClick={() => setSong(index)}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-                  >
-                    Seleccionar
-                  </button>
                 </td>
               </tr>
             ))}

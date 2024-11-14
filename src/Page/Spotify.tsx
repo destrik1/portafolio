@@ -8,6 +8,7 @@ import img1 from "../assets/img/BannerS.jpg";
 import img2 from "../assets/img/BannerY.jpg";
 import img3 from "../assets/img/BannerI.jpg";
 
+
 type Props = {};
 function Spotify({}: Props) {
   return (
