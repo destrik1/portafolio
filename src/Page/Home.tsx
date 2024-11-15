@@ -8,12 +8,13 @@ type Props = {};
 
 function Home({}: Props) {
   return (
-    <div className="bg-gradient-to-b bg-purple-700 from-orange-500">
+    <div className="bg-gradient-to-b bg-black from-purple-700">
       <NavBar />
       <br />
       <HeroImage />
       <Title titulo={"Haz click aqui"} />
       <CardSection />
+      <br/>
       <Footer />
     </div>
   );
