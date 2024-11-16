@@ -63,7 +63,7 @@ const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
             controls
             className="w-3/4" // Hacer la barra más larga (75% del contenedor)
             style={{
-              backgroundColor: "#4CAF50", // Cambiar el color de la barra de reproducción (ajústalo como prefieras)
+              backgroundColor: "0px", // Cambiar el color de la barra de reproducción (ajústalo como prefieras)
               borderRadius: "10px",
             }}
             controlsList="nodownload" // Desactiva la opción de descarga en los controles
@@ -105,7 +105,7 @@ const Playlist = () => {
         </h2>
         <AudioPlayer currentSong={currentSong} />
         <br />
-        <table className="w-full table-auto text-white">
+        <table className="w-full table-auto text-white mt-4 border">
           <thead>
             <tr className="bg-gray-700 text-xl">
               <th className="p-3 text-center font-medium">Canción</th>

@@ -21,7 +21,7 @@ function CarouselComponent({ img1, img2, img3 }: Props) {
         infiniteLoop={true} // Hace que el carrusel se repita infinitamente
         showThumbs={false} // Oculta los pequeños thumbnails debajo del carrusel
         showStatus={false} // Oculta el contador de imágenes
-        interval={8000} // Tiempo entre cada cambio de imagen (8 segundos)
+        interval={10000} // Tiempo entre cada cambio de imagen (8 segundos)
         stopOnHover={true} // Detiene el auto-play cuando el mouse está sobre el carrusel
       >
         {/* Imagen 1 - Redirección a Spotify */}
@@ -63,9 +63,9 @@ function CarouselComponent({ img1, img2, img3 }: Props) {
 
 const styles = {
   carouselContainer: {
-    maxWidth: "1300px", // Ajusta el ancho del carrusel según sea necesario
+    maxWidth: "1000px", // Ajusta el ancho del carrusel según sea necesario
     margin: "0 auto", // Centra el carrusel en la página
-    marginTop: "20px",
+    marginTop: "0px",
   },
   image: {
     width: "100%", // Hacemos que la imagen ocupe todo el ancho disponible del carrusel

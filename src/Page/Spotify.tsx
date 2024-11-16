@@ -12,14 +12,18 @@ import img3 from "../assets/img/BannerI.jpg";
 type Props = {};
 function Spotify({}: Props) {
   return (
-    <div className="bg-gradient-to-b bg-black from-green-500">
+    <>
+    <div className="bg-gradient-to-b bg-green-500 from-black">
       <NavBar />
+      </div>
+      <div className="bg-gradient-to-b bg-black from-green-500">
       <CarouselComponent img1={img1} img2={img2} img3={img3} />
       <Playlist />
       <Carta/>
       <br/> 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }
 
