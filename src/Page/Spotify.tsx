@@ -13,10 +13,10 @@ type Props = {};
 function Spotify({}: Props) {
   return (
     <>
-    <div className="bg-gradient-to-b bg-green-500 from-black">
+    <div className="bg-gradient-to-b bg-teal-400 from-black">
       <NavBar />
       </div>
-      <div className="bg-gradient-to-b bg-black from-green-500">
+      <div className="bg-gradient-to-b bg-black from-teal-400">
       <CarouselComponent img1={img1} img2={img2} img3={img3} />
       <Playlist />
       <Carta/>
