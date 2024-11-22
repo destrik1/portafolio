@@ -13,7 +13,7 @@ function Home({}: Props) {
         <NavBar />
         <br />
       </div>
-      <div className="bg-gradient-to-b bg-black from-purple-600">
+      <div className="bg-gradient-to-b bg-black from-purple-700">
         <HeroImage />
         <Title titulo={"Haz click aqui"} />
         <CardSection />
