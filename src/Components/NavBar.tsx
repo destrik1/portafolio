@@ -18,7 +18,7 @@ function NavBar() {
               <span className="text-white">Paya</span>
             </div>
           </a>
-          <div className="hidden w-full md:block md:w-auto">
+          <div className="hidden w-full md:block md:w-auto p-5">
             <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
               <li>
                 <Link
