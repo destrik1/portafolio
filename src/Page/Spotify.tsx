@@ -18,7 +18,9 @@ function Spotify({}: Props) {
       </div>
       <div className="bg-gradient-to-b bg-black from-teal-400">
       <CarouselComponent img1={img1} img2={img2} img3={img3} />
+      <br/>
       <Playlist />
+      <br/>
       <Carta/>
       <br/> 
       <Footer />

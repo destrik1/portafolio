@@ -14,7 +14,7 @@ interface Song {
   youtubeUrl: string;
 }
 
-// List of songs with unique IDs, artists, and URLs
+// Lista de canciones
 const songs: Song[] = [
   {
     id: 2,
@@ -52,98 +52,94 @@ const songs: Song[] = [
     youtubeUrl: "https://youtu.be/sHl_OUSFI9I?si=GqzOBmJDLhGcMHhT",
   },
 ];
-// Audio player component
+
+// Componente para el reproductor de audio
 const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
   return (
-    <div className="text-center m-10 h-10">
+    <div className="flex flex-col items-center mb-4">
       {currentSong ? (
-        <div className="flex justify-center">
+        <>
+          {/* Reproductor de audio */}
           <audio
             key={currentSong.id}
             controls
-            className="w-3/4" // Hacer la barra más larga (75% del contenedor)
-            style={{
-              backgroundColor: "0px", // Cambiar el color de la barra de reproducción (ajústalo como prefieras)
-              borderRadius: "10px",
-            }}
-            controlsList="nodownload" // Desactiva la opción de descarga en los controles
+            className="w-full max-w-[300px] rounded-lg"
+            controlsList="nodownload" // Evita descargas
           >
             <source src={currentSong.audioSrc} type="audio/mpeg" />
             Tu navegador no soporta el elemento de audio.
           </audio>
-        </div>
+
+          {/* Información de la canción */}
+          <p className="mt-2 text-white text-sm font-semibold text-center">
+            {currentSong.title}
+          </p>
+          <p className="text-gray-400 text-xs text-center">
+            {currentSong.artist}
+          </p>
+        </>
       ) : (
-        <p>Selecciona una canción para reproducir</p>
-      )}
-      {currentSong && (
-        <p className="text-white mt-2 text-2xl">
-          {currentSong.title} - {currentSong.artist}
-        </p>
+        <p className="text-gray-300 text-sm">Selecciona una canción</p>
       )}
     </div>
   );
 };
 
-// Playlist component with song table
+// Componente principal de Playlist
 const Playlist = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState<number | null>(0);
 
-  // Cambiar a la canción seleccionada al hacer clic en cualquier fila
   const setSong = (index: number) => {
     setCurrentSongIndex(index);
-    console.log("Canción seleccionada:", songs[index].title);
   };
 
   const currentSong =
     currentSongIndex !== null ? songs[currentSongIndex] : null;
 
   return (
-    <div className="flex justify-center p-7">
-      <div className="w-full max-w-4xl border shadow-xl rounded-lg p-8 bg-gray-800">
-        <h2 className="text-center text-4xl font-semibold mb-6 text-white">
+    <div className="flex justify-center p-3 bg-gray-900 min-h-screen">
+      <div className="w-full max-w-sm border shadow-md rounded-md p-4 bg-gray-800">
+        {/* Título */}
+        <h2 className="text-center text-xl font-bold mb-4 text-white">
           Playlist
         </h2>
+
+        {/* Reproductor de audio */}
         <AudioPlayer currentSong={currentSong} />
-        <br />
-        <table className="w-full table-auto text-white mt-4 border">
-          <thead>
-            <tr className="bg-gray-700 text-xl">
-              <th className="p-3 text-center font-medium">Canción</th>
-              <th className="p-3 text-center font-medium">Artista</th>
-              <th className="p-3 text-center font-medium">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {songs.map((song, index) => (
-              <tr
-                key={song.id}
-                className="hover:bg-gray-600 cursor-pointer"
-                onClick={() => setSong(index)} // Cambiar la canción al hacer clic en la fila
-              >
-                <td className="border p-3 text-center">{song.title}</td>
-                <td className="border p-3 text-center">{song.artist}</td>
-                <td className="border p-3 text-center flex justify-center gap-2">
-                  <a
-                    href={song.spotifyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-green-500 text-white px-3 py-2 rounded-lg hover:bg-green-600 transition"
-                  >
-                    Spotify
-                  </a>
-                  <a
-                    href={song.youtubeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 transition"
-                  >
-                    YouTube
-                  </a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+
+        {/* Tabla de canciones */}
+        <div className="space-y-2">
+          {songs.map((song, index) => (
+            <div
+              key={song.id}
+              className={`flex flex-col bg-gray-700 p-2 rounded-md hover:bg-gray-600 transition ${
+                currentSongIndex === index ? "border-2 border-blue-500" : ""
+              }`}
+              onClick={() => setSong(index)}
+            >
+              <p className="text-sm text-white">{song.title}</p>
+              <p className="text-xs text-gray-400">{song.artist}</p>
+              <div className="flex gap-2 mt-1">
+                <a
+                  href={song.spotifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white text-xs px-2 py-1 rounded hover:bg-green-600 transition"
+                >
+                  Spotify
+                </a>
+                <a
+                  href={song.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-red-500 text-white text-xs px-2 py-1 rounded hover:bg-red-600 transition"
+                >
+                  YouTube
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

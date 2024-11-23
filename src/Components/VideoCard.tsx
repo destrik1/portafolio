@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from "react";
 
 interface VideoCardProps {
   videoSrc: string;
@@ -9,27 +9,45 @@ interface VideoCardProps {
 const VideoCard: React.FC<VideoCardProps> = ({ videoSrc, title, Youtube }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleMouseEnter = () => {
-    videoRef.current?.play();
-  };
+  useEffect(() => {
+    const videoElement = videoRef.current;
 
-  const handleMouseLeave = () => {
-    videoRef.current?.pause();
-  };
+    if (!videoElement) return;
+
+    // Configuración del Intersection Observer
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Si el video está visible, se reproduce
+          videoElement.play();
+        } else {
+          // Si el video sale del viewport, se pausa
+          videoElement.pause();
+        }
+      },
+      {
+        threshold: 0.5, // Al menos el 50% del video debe estar visible para que se reproduzca
+      }
+    );
+
+    observer.observe(videoElement);
+
+    // Limpieza del Observer cuando el componente se desmonta
+    return () => {
+      observer.unobserve(videoElement);
+    };
+  }, []);
 
   const handleClick = () => {
     if (Youtube) {
-      window.location.href = Youtube;  // Redirige al enlace de YouTube si está disponible
+      window.location.href = Youtube; // Redirige al enlace de YouTube si está disponible
     }
   };
 
   return (
     <div className="relative w-full max-w-sm p-4 bg-black shadow-lg rounded-lg hover:shadow-xl transition-shadow">
-      {/* Envolver el video con un div que detecte el clic para redirigir */}
       <div
         className="relative overflow-hidden rounded-lg group"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
         onClick={handleClick} // Maneja el clic para la redirección
       >
         <video

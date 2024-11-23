@@ -1,4 +1,5 @@
-import { FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa"; // Importa los iconos que necesites
+import {  FaSpotify, FaYoutube } from "react-icons/fa"; // Importa los iconos que necesites
+import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -37,7 +38,7 @@ const Footer = () => {
                 href="https://www.instagram.com/paya.cl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 className="flex  mb-[1px]"
               >
-                <FaInstagram className="mr-2" /> Instagram
+                <RiInstagramFill  className="mr-2" /> Instagram
               </a>
               <br />
             </li>

@@ -9,11 +9,11 @@ type Props = {};
 function Home({}: Props) {
   return (
     <>
-      <div className="bg-gradient-to-b bg-purple-700 from-black">
+      <div className="bg-gradient-to-b bg-violet-600 from-black">
         <NavBar />
         <br />
       </div>
-      <div className="bg-gradient-to-b bg-black from-purple-700">
+      <div className="bg-gradient-to-b bg-black from-violet-600">
         <HeroImage />
         <Title titulo={"Haz click aqui"} />
         <CardSection />

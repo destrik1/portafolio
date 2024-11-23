@@ -1,6 +1,6 @@
 import { FaSpotify } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
-import { FiInstagram } from "react-icons/fi";
+import { RiInstagramFill } from "react-icons/ri";
 
 import Card from "../Components/Card";
 
@@ -37,7 +37,7 @@ function Carta({}: Props) {
         >
           <Card
             colorCard="bg-gradient-to-b from-purple-600 to-amber-400 shadow-lg rounded-full border border-purple-600 w-60 h-60 flex items-center justify-center"
-            icon={<FiInstagram className="h-20 w-20 text-purple-800" />}
+            icon={<RiInstagramFill  className="h-20 w-20 text-purple-500" />}
           />
         </a>
       </section>

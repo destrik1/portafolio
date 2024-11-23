@@ -5,9 +5,9 @@ import Carta from "../Components/Carta";
 import VideoCard from "../Components/VideoCard";
 
 import video1 from "../assets/Video/esa_droga2.mp4";
-import video2 from "../assets/Video/esa_droga2.mp4";
+import video2 from "../assets/Video/PAYA YA DISPONIBLE.mp4";
 import video3 from "../assets/Video/esa_droga2.mp4";
-import video4 from "../assets/Video/esa_droga2.mp4";
+import video4 from "../assets/Video/PAYA YA DISPONIBLE.mp4";
 import img1 from "../assets/img/BannerY.jpg";
 import img2 from "../assets/img/BannerS.jpg";
 import img3 from "../assets/img/BannerI.jpg";
@@ -30,7 +30,7 @@ function Youtube({}: Props) {
           />
           <VideoCard
             videoSrc={video2}
-            title="Esa Droga"
+            title="Pegao Pegao"
             Youtube="https://www.youtube.com/watch?v=Z17LOZi4tCw"
           />
           <VideoCard
@@ -40,7 +40,7 @@ function Youtube({}: Props) {
           />
           <VideoCard
             videoSrc={video4}
-            title="Esa Droga"
+            title="Pegao Pegao"
             Youtube="https://www.youtube.com/watch?v=Z17LOZi4tCw"
           />
         </div>
