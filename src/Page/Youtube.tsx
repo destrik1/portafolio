@@ -38,11 +38,6 @@ function Youtube({}: Props) {
             title="Esa Droga"
             Youtube="https://www.youtube.com/watch?v=Z17LOZi4tCw"
           />
-          <VideoCard
-            videoSrc={video4}
-            title="Pegao Pegao"
-            Youtube="https://www.youtube.com/watch?v=Z17LOZi4tCw"
-          />
         </div>
         <Carta />
         <br />
