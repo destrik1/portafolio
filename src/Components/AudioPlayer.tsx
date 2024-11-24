@@ -56,14 +56,14 @@ const songs: Song[] = [
 // Componente para el reproductor de audio
 const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
   return (
-    <div className="flex flex-col items-center mb-4">
+    <div className="flex flex-col items-center mb-6">
       {currentSong ? (
         <>
           {/* Reproductor de audio */}
           <audio
             key={currentSong.id}
             controls
-            className="w-full max-w-[300px] rounded-lg"
+            className="w-full max-w-[350px] rounded-lg"
             controlsList="nodownload" // Evita descargas
           >
             <source src={currentSong.audioSrc} type="audio/mpeg" />
@@ -71,15 +71,15 @@ const AudioPlayer = ({ currentSong }: { currentSong: Song | null }) => {
           </audio>
 
           {/* Información de la canción */}
-          <p className="mt-2 text-white text-sm font-semibold text-center">
+          <p className="mt-4 text-white text-lg font-semibold text-center">
             {currentSong.title}
           </p>
-          <p className="text-gray-400 text-xs text-center">
+          <p className="text-gray-400 text-sm text-center">
             {currentSong.artist}
           </p>
         </>
       ) : (
-        <p className="text-gray-300 text-sm">Selecciona una canción</p>
+        <p className="text-gray-300 text-lg">Selecciona una canción</p>
       )}
     </div>
   );
@@ -97,10 +97,10 @@ const Playlist = () => {
     currentSongIndex !== null ? songs[currentSongIndex] : null;
 
   return (
-    <div className="flex justify-center p-3 bg-gray-900 min-h-screen">
-      <div className="w-full max-w-sm border shadow-md rounded-md p-4 bg-gray-800">
+    <div className="flex justify-center min-h-screen p-6">
+      <div className="w-full max-w-md border shadow-lg rounded-md p-6 bg-gray-800">
         {/* Título */}
-        <h2 className="text-center text-xl font-bold mb-4 text-white">
+        <h2 className="text-center text-2xl font-bold mb-6 text-white">
           Playlist
         </h2>
 
@@ -108,23 +108,23 @@ const Playlist = () => {
         <AudioPlayer currentSong={currentSong} />
 
         {/* Tabla de canciones */}
-        <div className="space-y-2">
+        <div className="space-y-4">
           {songs.map((song, index) => (
             <div
               key={song.id}
-              className={`flex flex-col bg-gray-700 p-2 rounded-md hover:bg-gray-600 transition ${
+              className={`flex flex-col bg-gray-700 p-4 rounded-md hover:bg-gray-600 transition ${
                 currentSongIndex === index ? "border-2 border-blue-500" : ""
               }`}
               onClick={() => setSong(index)}
             >
-              <p className="text-sm text-white">{song.title}</p>
-              <p className="text-xs text-gray-400">{song.artist}</p>
-              <div className="flex gap-2 mt-1">
+              <p className="text-base text-white">{song.title}</p>
+              <p className="text-sm text-gray-400">{song.artist}</p>
+              <div className="flex gap-3 mt-2">
                 <a
                   href={song.spotifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-green-500 text-white text-xs px-2 py-1 rounded hover:bg-green-600 transition"
+                  className="bg-green-500 text-white text-sm px-3 py-2 rounded hover:bg-green-600 transition"
                 >
                   Spotify
                 </a>
@@ -132,7 +132,7 @@ const Playlist = () => {
                   href={song.youtubeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-red-500 text-white text-xs px-2 py-1 rounded hover:bg-red-600 transition"
+                  className="bg-red-500 text-white text-sm px-3 py-2 rounded hover:bg-red-600 transition"
                 >
                   YouTube
                 </a>
