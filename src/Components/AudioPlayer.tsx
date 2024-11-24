@@ -1,8 +1,8 @@
 import { useState } from "react";
-import songFile1 from "../assets/Song/Amarella.mp3";
+import songFile1 from "../assets/Song/AMARELLA-PAYA.mp3";
 import songFile2 from "../assets/Song/ElMomento.mp3";
-import songFile3 from "../assets/Song/EsaDroga.mp3";
-import songFile4 from "../assets/Song/PegaoPegao.mp3";
+import songFile3 from "../assets/Song/ESA DROGA-PAYA.mp3";
+import songFile4 from "../assets/Song/PEGAO PEGAO -PAYA.mp3";
 
 // Define Song type
 interface Song {
