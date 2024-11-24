@@ -1,6 +1,7 @@
 import { FaSpotify } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
-import { FiInstagram } from "react-icons/fi";
+import { RiInstagramFill } from "react-icons/ri";
+import { FaTiktok } from "react-icons/fa";
 
 import Card from "../Components/Card";
 import { Link } from "react-router-dom";
@@ -17,7 +18,9 @@ function CardSection({}: Props) {
               "bg-gradient-to-b bg-emerald-500 from-black/50 mb-6 px-6 w-full max-w-[400px] h-[360px] shadow-lg rounded-xl border"
             }
             mt={"mt-8"}
-            icon={<FaSpotify className="h-16 w-16 md:h-20 md:w-20 text-emerald-500" />}
+            icon={
+              <FaSpotify className="h-16 w-16 md:h-20 md:w-20 text-emerald-500" />
+            }
             texto2={"Revisa aquí"}
             texto1={"Explora las opciones alimenticias para una vida saludable"}
           />
@@ -31,7 +34,9 @@ function CardSection({}: Props) {
             mt={"mt-8"}
             texto2={"Revisa aquí"}
             texto1={"Explora las opciones alimenticias para una vida saludable"}
-            icon={<FaYoutube className="h-16 w-16 md:h-20 md:w-20 text-red-700" />}
+            icon={
+              <FaYoutube className="h-16 w-16 md:h-20 md:w-20 text-red-700" />
+            }
           />
         </Link>
 
@@ -46,11 +51,26 @@ function CardSection({}: Props) {
               "bg-gradient-to-b bg-amber-400 from-purple-600 mb-6 px-6 w-full max-w-[400px] h-[360px] shadow-lg rounded-xl border"
             }
             mt={"mt-8"}
-            icon={<FiInstagram className="h-16 w-16 md:h-20 md:w-20 text-purple-800" />}
+            icon={
+              <RiInstagramFill className="h-16 w-16 md:h-20 md:w-20 text-purple-800" />
+            }
             texto2={"Revisa aquí"}
             texto1={"Explora las opciones alimenticias para una vida saludable"}
           />
         </a>
+                <Link to={"/Youtube"} className="flex justify-center">
+          <Card
+            colorCard={
+              "bg-gradient-to-b bg-white from-black to-white mb-6 px-6 w-full max-w-[400px] h-[360px] shadow-lg rounded-xl border"
+            }
+            mt={"mt-8"}
+            texto2={"Revisa aquí"}
+            texto1={"Explora las opciones alimenticias para una vida saludable"}
+            icon={
+              <FaTiktok  className="h-16 w-16 md:h-20 md:w-20 text-black" />
+            }
+          />
+        </Link>
       </section>
     </>
   );
