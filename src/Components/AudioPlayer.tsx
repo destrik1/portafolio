@@ -97,7 +97,7 @@ const Playlist = () => {
     currentSongIndex !== null ? songs[currentSongIndex] : null;
 
   return (
-    <div className="flex justify-center min-h-screen p-6">
+    <div className="flex justify-center  p-6">
       <div className="w-full max-w-md border shadow-lg rounded-md p-6 bg-gray-800">
         {/* Título */}
         <h2 className="text-center text-2xl font-bold mb-6 text-white">

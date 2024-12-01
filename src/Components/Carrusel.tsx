@@ -5,9 +5,12 @@ type Props = {
   img1: string;
   img2: string;
   img3: string;
+  URL: string;
+  URL1: string;
+  URL2: string;
 };
 
-function CarouselComponent({ img1, img2, img3 }: Props) {
+function CarouselComponent({ img1, img2, img3, URL,URL1,URL2 }: Props) {
   // Función para manejar la redirección al hacer clic
   const handleRedirect = (url: string) => {
     window.open(url, "_blank");
@@ -28,7 +31,7 @@ function CarouselComponent({ img1, img2, img3 }: Props) {
         <div
           onClick={() =>
             handleRedirect(
-              "https://open.spotify.com/intl-es/artist/37EytgomE1ofIndtrOGoy2?si=MC2MktG4T8ObO2PmcZGhB"
+             `${URL}`
             )
           }
         >
@@ -39,7 +42,7 @@ function CarouselComponent({ img1, img2, img3 }: Props) {
         <div
           onClick={() =>
             handleRedirect(
-              "https://www.instagram.com/paya.cl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              `${URL1}`
             )
           }
         >
@@ -50,7 +53,7 @@ function CarouselComponent({ img1, img2, img3 }: Props) {
         <div
           onClick={() =>
             handleRedirect(
-              "https://open.spotify.com/intl-es/artist/37EytgomE1ofIndtrOGoy2?si=MC2MktG4T8ObO2PmcZGhB"
+              `${URL2}`
             )
           }
         >

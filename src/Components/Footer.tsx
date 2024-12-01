@@ -1,5 +1,6 @@
 import {  FaSpotify, FaYoutube } from "react-icons/fa"; // Importa los iconos que necesites
 import { RiInstagramFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -44,12 +45,14 @@ const Footer = () => {
             </li>
             <br />
             <li className="flex items-center bottom-[1px]">
+              <Link to={"/Youtube"}>
               <a
-                href="https://twitter.com"
+                
                 className="flex text-center mb-[1px]"
               >
                 <FaYoutube className="mr-2" /> Youtube
               </a>
+              </Link>
             </li>
           </ul>
         </div>

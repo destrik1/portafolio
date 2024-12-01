@@ -3,6 +3,7 @@ import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaTiktok } from "react-icons/fa";
 import Card from "../Components/Card";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -20,8 +21,8 @@ function Carta({}: Props) {
             icon={<FaSpotify className="h-20 w-20 text-emerald-500" />}
           />
         </a>
+        <Link to={"/Youtube"}>
         <a
-          href="https://www.youtube.com/@WARKING"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -30,7 +31,7 @@ function Carta({}: Props) {
             icon={<FaYoutube className="h-20 w-20 text-red-700" />}
           />
         </a>
-
+        </Link>
         <a
           href="https://www.instagram.com/paya.cl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           target="_blank"
@@ -42,7 +43,7 @@ function Carta({}: Props) {
           />
         </a>
         <a
-          href="https://www.instagram.com/paya.cl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          href="https://www.tiktok.com/@paya.cl?_t=8rraJIjcgh6&_r=1"
           target="_blank"
           rel="noopener noreferrer"
         >x

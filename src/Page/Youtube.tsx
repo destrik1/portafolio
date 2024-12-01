@@ -20,7 +20,14 @@ function Youtube({}: Props) {
         <NavBar />
       </div>
       <div className="bg-gradient-to-b bg-black from-red-600">
-        <CarouselComponent img1={img1} img2={img2} img3={img3} />
+        <CarouselComponent
+          img1={img1}
+          URL="/youtube"
+          img2={img2}
+          URL1="https://open.spotify.com/intl-es/artist/37EytgomE1ofIndtrOGoy2?si=MC2MktG4T8ObO2PmcZGhBQ"
+          img3={img3}
+          URL2="https://www.instagram.com/paya.cl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+        />
         <br />
         <div className="flex flex-wrap justify-center gap-6 p-8">
           <VideoCard
@@ -33,13 +40,13 @@ function Youtube({}: Props) {
             title="Pegao Pegao"
             Youtube="https://www.youtube.com/watch?v=Z17LOZi4tCw"
           />
-           <VideoCard
+          <VideoCard
             videoSrc={video3}
             title="Llamame"
             Youtube="https://www.youtube.com/watch?v=OLmFZAgRcfs"
           />
-           <VideoCard
-            videoSrc={video4 }
+          <VideoCard
+            videoSrc={video4}
             title="El Momento"
             Youtube="https://www.youtube.com/watch?v=NVuc4C25WmY"
           />
