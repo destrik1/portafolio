@@ -21,7 +21,7 @@ function Carta({}: Props) {
           />
         </a>
         <a
-          href="https://www.instagram.com/paya.cl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          href="https://www.youtube.com/@WARKING"
           target="_blank"
           rel="noopener noreferrer"
         >

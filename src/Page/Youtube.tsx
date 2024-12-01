@@ -6,6 +6,8 @@ import VideoCard from "../Components/VideoCard";
 
 import video1 from "../assets/Video/esa_droga.mp4";
 import video2 from "../assets/Video/video2.mp4";
+import video3 from "../assets/Video/Llamame.mp4";
+import video4 from "../assets/Video/El Momento.mp4";
 import img1 from "../assets/img/BannerY.jpg";
 import img2 from "../assets/img/BannerS.jpg";
 import img3 from "../assets/img/BannerI.jpg";
@@ -30,6 +32,16 @@ function Youtube({}: Props) {
             videoSrc={video2}
             title="Pegao Pegao"
             Youtube="https://www.youtube.com/watch?v=Z17LOZi4tCw"
+          />
+           <VideoCard
+            videoSrc={video3}
+            title="Llamame"
+            Youtube="https://www.youtube.com/watch?v=OLmFZAgRcfs"
+          />
+           <VideoCard
+            videoSrc={video4 }
+            title="El Momento"
+            Youtube="https://www.youtube.com/watch?v=NVuc4C25WmY"
           />
         </div>
         <Carta />
