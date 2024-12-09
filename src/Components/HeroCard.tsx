@@ -17,7 +17,7 @@ function HeroImage({}: Props) {
             Valle del aconcagua chile. Mi música nace de experiencias, emociones
             y la vida misma. Creo en el poder de la música para unir a las
             personas, para curar y para inspirar. Cada canción es un capítulo de
-            mi viaje, donde exploro el amor, la lucha, la esperanza y aventuras.
+            mi viaje, donde exploro el amor,desamor, la lucha, la esperanza y aventuras.
             Estoy emocionado de conectarme con cada uno de ustedes a través de
             mis letras y melodías. ¡Gracias por ser parte de este viaje musical
             viaje musical!"
